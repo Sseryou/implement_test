@@ -43,6 +43,7 @@ public class BoardSaveService {
             boardData = BoardForm.of(boardForm);
         }
 
-        repository.saveAndFlush(boardData);
+        boardData = repository.saveAndFlush(boardData);
+        boardForm.setId(boardData.getId());
     }
 }
